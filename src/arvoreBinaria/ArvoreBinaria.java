@@ -169,10 +169,14 @@ public class ArvoreBinaria {
 		}
 	}
 
+	public void printOrdem() {
+		inOrder(node);
+	}
+	
 	public void inOrder(No atual) {
 		if (atual != null) {
 			inOrder(atual.getEsquerdo());
-			System.out.print(atual.getelemento() + " ");
+			System.out.print(atual);
 			inOrder(atual.getDireito());
 		}
 	}
@@ -238,5 +242,5 @@ public class ArvoreBinaria {
 		}
 		return anterior;
 	}
-
+	
 }

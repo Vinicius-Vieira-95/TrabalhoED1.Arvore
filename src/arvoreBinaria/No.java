@@ -64,9 +64,9 @@ public class No{
 	
 	@Override
 	public String toString() {
-		
-		
-		return elemento;
+		StringBuilder sb = new StringBuilder();
+		sb.append(elemento+" - " +lista +"\n");
+		return sb.toString();
 	}
 	
 

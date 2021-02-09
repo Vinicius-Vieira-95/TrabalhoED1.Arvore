@@ -3,6 +3,7 @@ package aplication;
 import java.io.File;
 
 import arquivo.Arquivo;
+import arvoreBinaria.No;
 
 public class Program {
 
@@ -13,7 +14,13 @@ public class Program {
 		
 		Arquivo arq = new Arquivo(file2);
 		
-		arq.pesquisarPalavras("Good easy by not but not");
+		arq.lerArquivo();
+		arq.pesquisarPalavras(" vini cecilia easy by not but good");
+		
+		System.out.println();
+		System.out.println();
+		arq.getArvore().printOrdem();
+		System.out.println();
 		
 	}
 	
