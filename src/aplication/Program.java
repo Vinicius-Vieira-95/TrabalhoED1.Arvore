@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.Scanner;
 
 import arquivo.Arquivo;
-import arvoreBinaria.No;
 
 public class Program {
 

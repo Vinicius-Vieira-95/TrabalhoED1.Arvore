@@ -49,18 +49,28 @@ public class Arquivo {
 	}
 
 	public void pesquisarPalavras(String palavras) {
-		String[] vetor = palavras.split(" ");
+		String[] vetor = palavras.toLowerCase().split(" ");
 		Arvore = new ArvoreBinaria();
 		
 		for (String s : vetor) {
-			Arvore.inserir(s);
+			Arvore.inserir(s.toLowerCase());
 		}
 
 		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 			String linha = br.readLine();
+			
 			int j = 1;
 			while (linha != null) {
+				
+				String [] vetor2 = linha.split(" ");
+				StringBuilder sb = new StringBuilder();
+				for(int i = 0; i < vetor2.length; i++) {
+					sb.append(vetor2[i].toLowerCase()+" ");
+				}
+				linha = sb.toString();
+				
 				for (int i = 0; i < vetor.length; i++) {
+					vetor[i].toLowerCase();
 					if (linha.contains(vetor[i])) {
 						Arvore.addLinha(vetor[i], j);
 					}
