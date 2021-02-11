@@ -8,11 +8,11 @@ public class No{
 	private No direito;
 
 	private String elemento;
-	private ListaEncadeada<Integer>lista;
+	private ListaEncadeada lista;
 	
 
 	public No() {
-		lista = new ListaEncadeada<Integer>();
+		lista = new ListaEncadeada();
 	}
 	
 	public No(String elemento) {
@@ -26,11 +26,11 @@ public class No{
 		this.elemento = elemento;
 	}
 
-	public ListaEncadeada<Integer> getLista() {
+	public ListaEncadeada getLista() {
 		return lista;
 	}
 
-	public void setLista(ListaEncadeada<Integer> lista) {
+	public void setLista(ListaEncadeada lista) {
 		this.lista = lista;
 	}
 
@@ -65,9 +65,10 @@ public class No{
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(elemento+" - " +lista +"\n");
+		String linha = lista.toString();
+		sb.append(this.elemento+" - ");
+		sb.append(linha+"\n");
 		return sb.toString();
 	}
 	
-
 }

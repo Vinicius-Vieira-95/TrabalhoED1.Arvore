@@ -1,17 +1,17 @@
 package lista;
 
-public class ListaEncadeada<T> {
+public class ListaEncadeada {
 
 	private NoDuplamenteEncadeado inicio;
 	private NoDuplamenteEncadeado fim;
-	
+
 	protected int quantidade;
 
 	public ListaEncadeada() {
-			this.inicio = null;
-			this.fim = inicio;
-			this.quantidade = 0;
-		}
+		this.inicio = null;
+		this.fim = inicio;
+		this.quantidade = 0;
+	}
 
 	public NoDuplamenteEncadeado getInicio() {
 		return inicio;
@@ -31,13 +31,12 @@ public class ListaEncadeada<T> {
 	}
 
 	// retorna o tamanho do No
-
 	public int getQuantidade() {
 		return this.quantidade;
 	}
 
 	// metodo para criar uma lista
-	public void criarLista(Object elemento) {
+	public void criarLista(Integer elemento) {
 		if (this.inicio == null) {
 			inicio = new NoDuplamenteEncadeado();
 			fim = inicio;
@@ -55,7 +54,7 @@ public class ListaEncadeada<T> {
 		}
 	}
 
-	public boolean inserirNoInicio(Object elemento) {
+	public boolean inserirNoInicio(Integer elemento) {
 		if (this.inicio == null) {
 			criarLista(elemento);
 			return true;
@@ -70,7 +69,7 @@ public class ListaEncadeada<T> {
 	}
 
 	// metodo para inserir um elemento no final da lista
-	public boolean inserirNoFim(Object elemento) {
+	public boolean inserirNoFim(Integer elemento) {
 		if (quantidade != 0) {
 			NoDuplamenteEncadeado novoNo = new NoDuplamenteEncadeado();
 			novoNo.setElemento(elemento);
@@ -86,7 +85,7 @@ public class ListaEncadeada<T> {
 		return false;
 	}
 
-	public boolean removerElemento(Object elemento) {
+	public boolean removerElemento(Integer elemento) {
 
 		NoDuplamenteEncadeado aux = new NoDuplamenteEncadeado();
 		aux = inicio;
@@ -128,7 +127,7 @@ public class ListaEncadeada<T> {
 	}
 
 	// passe um referencia de localização metodo não finalizado
-	public boolean inserirNoMeio(Object elemento) {
+	public boolean inserirNoMeio(Integer elemento) {
 		if (this.inicio == null) {
 			criarLista(elemento);
 			return true;
@@ -148,23 +147,22 @@ public class ListaEncadeada<T> {
 		NoDuplamenteEncadeado aux = this.inicio;
 
 		while (aux != null) {
-			System.out.print(aux.getElemento()+" ");
+			System.out.print(aux.getElemento() + " ");
 			aux = aux.getProx();
 		}
 		return true;
 	}
 
+	
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		NoDuplamenteEncadeado aux = this.inicio;
 		while (aux != null) {
-			sb.append(aux.getElemento()+" ");
+			sb.append(aux + " ");
 			aux = aux.getProx();
 		}
 		return sb.toString();
 	}
-	
-	
 	
 }

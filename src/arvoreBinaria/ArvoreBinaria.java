@@ -74,6 +74,7 @@ public class ArvoreBinaria {
 			if(atual.getelemento().equals(elemento)) {
 				atual.add(i);
 				 flag = true;
+				 return true;
 			}
 			if( 0 >= elemento.compareTo(atual.getelemento())) {
 				atual = atual.getEsquerdo();
@@ -173,7 +174,7 @@ public class ArvoreBinaria {
 		inOrder(node);
 	}
 	
-	public void inOrder(No atual) {
+	private void inOrder(No atual) {
 		if (atual != null) {
 			inOrder(atual.getEsquerdo());
 			System.out.print(atual);
@@ -181,7 +182,7 @@ public class ArvoreBinaria {
 		}
 	}
 
-	public void preOrder(No atual) {
+	private void preOrder(No atual) {
 		if (atual != null) {
 			System.out.print(atual.getelemento() + " ");
 			preOrder(atual.getEsquerdo());
@@ -189,7 +190,7 @@ public class ArvoreBinaria {
 		}
 	}
 
-	public void posOrder(No atual) {
+	private void posOrder(No atual) {
 		if (atual != null) {
 			posOrder(atual.getEsquerdo());
 			posOrder(atual.getDireito());
@@ -197,7 +198,7 @@ public class ArvoreBinaria {
 		}
 	}
 
-	public int altura(No atual) {
+	private int altura(No atual) {
 		if (atual == null || (atual.getEsquerdo() == null && atual.getDireito() == null))
 			return 0;
 		else {
@@ -208,7 +209,7 @@ public class ArvoreBinaria {
 		}
 	}
 
-	public int folhas(No atual) {
+	private int folhas(No atual) {
 		if (atual == null)
 			return 0;
 		if (atual.getEsquerdo() == null && atual.getDireito() == null)
@@ -216,7 +217,7 @@ public class ArvoreBinaria {
 		return folhas(atual.getEsquerdo()) + folhas(atual.getDireito());
 	}
 
-	public int contarNos(No atual) {
+	private int contarNos(No atual) {
 		if (atual == null)
 			return 0;
 		else
@@ -243,4 +244,18 @@ public class ArvoreBinaria {
 		return anterior;
 	}
 	
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		No aux = node;
+		
+		while (aux != null) {
+			if (aux != null) {
+				inOrder(aux.getEsquerdo());
+				sb.append(aux);
+				inOrder(aux.getDireito());
+			}
+			break;
+		}
+		return sb.toString();
+	}
 }

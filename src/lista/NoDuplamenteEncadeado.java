@@ -4,7 +4,7 @@ public class NoDuplamenteEncadeado {
 
 	private NoDuplamenteEncadeado prox; // apontara para o proximo endereço de memoria
 	private NoDuplamenteEncadeado ant; //apontará para o enederço anterio no endereço de meroria
-	private Object elemento; //tipo de Objeto
+	private Integer elemento; //tipo de Objeto
 	
 	public NoDuplamenteEncadeado(){
 	}
@@ -24,16 +24,17 @@ public class NoDuplamenteEncadeado {
 		this.ant = ant;
 	}
 
-	public Object getElemento() {
+	public Integer getElemento() {
 		return elemento;
 	}
-	public void setElemento(Object elemento) {
+	public void setElemento(Integer elemento) {
 		this.elemento = elemento;
 	}
-
+	
+	
 	@Override
 	public String toString() {
-		return  (String) elemento;
+		return ""+elemento;
 	}
 	
 }
